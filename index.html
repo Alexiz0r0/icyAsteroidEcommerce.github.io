@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--LINKS -->
+  <!-- Bootstrap Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Styles Rules -->
+  <link rel="stylesheet" href="styleRules/generalR.css">
+  <link rel="stylesheet" href="styleRules/navBarR.css">
+  <link rel="stylesheet" href="styleRules/headerR.css">
+  <link rel="stylesheet" href="styleRules/secWelcomeR.css">
+  <link rel="stylesheet" href="styleRules/aboutR.css">
+  <link rel="stylesheet" href="styleRules/formR.css">
+  <link rel="stylesheet" href="styleRules/productsR.css">
+  <link rel="stylesheet" href="styleRules/footerR.css">
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Sweet Alert-->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!--endLINKS -->
+  <title>Icy Asteroid</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class = "navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+    <div class = "container">
+      <a class = "navbar-brand" href = "index.html"><p class="name-logo"><span class="first-name">Icy</span><span class="second-name-effect">Asteroid</span></p></a>
+      <!--Right buttons -->
+      <div class = "order-lg-2 nav-btns">
+        <button type = "button" class = "btn" id="search-btn">
+          <i class="bi bi-search"></i>
+        </button>
+        <button type = "button" class = "btn" id="cart-btn">
+          <div>
+            <i class="bi bi-cart"></i>
+            <div class = "btn-num">3</div>
+          </div>
+        </button>
+        <button type = "button" class = "btn" id="login-btn">
+          <i class="bi bi-person-circle"></i>
+        </button>
+      </div>
+      <!--Hidden and floating - Search -->
+      <form class="search-form">
+        <input type="search" id="search-box" placeholder="Buscar">
+        <label for="search-box"><i class="bi bi-search"></i></label>
+      </form>
+      <!--Hidden and floating - Shopping Cart -->
+      <div class="shopping-cart">
+        <div class="box">
+          <i class="bi bi-trash"></i>
+          <img src="img/iceC7.jpg" alt="">
+          <div class="content">
+            <h3>Green tea</h3>
+            <span class="price">S/17.50</span>
+            <span class="quantity">Cant: 1</span>
+          </div>
+        </div>
+        <div class="box">
+          <i class="bi bi-trash"></i>
+          <img src="img/iceC2.jpg" alt="">
+          <div class="content">
+            <h3>Cookies</h3>
+            <span class="price">S/17.50</span>
+            <span class="quantity">Cant: 1</span>
+          </div>
+        </div>
+        <div class="box">
+          <i class="bi bi-trash"></i>
+          <img src="img/iceC3.jpg" alt="">
+          <div class="content">
+            <h3>Tutti frutti</h3>
+            <span class="price">S/17.50</span>
+            <span class="quantity">Cant: 1</span>
+          </div>
+        </div>
+        <div class="total">Total: S/52.50</div>
+        <button class="btn-check-list text-uppercase" id="pro-Pagar">Proceder a pagar</button>
+      </div>
+      <!--Hidden and floating - Credit-Card -->
+      <form action="" class="credit-Card">
+        <div class = "title pt-3 pb-5">
+          <h2 class = "position-relative d-inline-block ms-4">Tarjeta de Crédito</h2>
+        </div>
+        <input type="text" placeholder="Numero" class="box-card-info">
+        <input type="text" placeholder="Titular de la tarjeta" class="box-card-info">
+        <input type="text" placeholder="MM/AA" class="box-card-info">
+        <input type="text" placeholder="CVV" class="box-card-info">
+        <input type="submit" value="Hacer pedido" class="btn-login text-uppercase">
+      </form>
+      <!--Hidden and floating - Login -->
+      <form action="" class="login-form">
+        <div class = "title pt-3 pb-5">
+          <h2 class = "position-relative d-inline-block ms-4">Iniciar sesión</h2>
+        </div>
+        <input type="email" placeholder="Correo electrónico" class="box">
+        <input type="password" placeholder="Contraseña" class="box">
+        <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+        <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+        <input type="submit" value="Ingresar" class="btn-login text-uppercase">
+      </form>
+      <!--Nav section-->
+      <button class = "navbar-toggler border-0" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navMenu">
+        <span class = "navbar-toggler-icon"></span>
+      </button>
+      <div class = "collapse navbar-collapse order-lg-1" id = "navMenu">
+        <ul class = "navbar-nav mx-auto text-center">
+          <li class = "nav-item px-2 py-2">
+            <a class = "nav-link text-uppercase" href = "#Inicio">Inicio</a>
+          </li>
+          <li class = "nav-item px-2 py-2">
+            <a class = "nav-link text-uppercase" href = "#Productos">Productos</a>
+          </li>
+          <li class = "nav-item px-2 py-2">
+            <a class = "nav-link text-uppercase" href = "#Acerca-de">Acerca de</a>
+          </li>
+          <li class = "nav-item px-2 py-2 border-0">
+            <a class = "nav-link text-uppercase" href = "#Contactenos">Contáctenos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End of Navbar -->
+  <!-- Header -->
+  <header id = "Inicio" class = "vh-100 carousel slide" data-bs-ride = "carousel" style = "padding-top: 115px;">
+    <div class = "container h-100 d-flex align-items-center carousel-inner">
+      <div class = "carousel-item text-center active">
+        <h2 class = "text-white">del 17 al 20 de Noviembre</h2>
+        <h1 class = "text-uppercase py-2 fw-bold text-white">Ofertas Flash</h1>
+        <a href = "#" class = "btn mt-3 text-uppercase">Compra aquí</a>
+      </div>
+      <div class = "carousel-item text-center ">
+        <h2 class = "text-white">del 24 al 27 de Noviembre</h2>
+        <h1 class = "text-uppercase py-2 fw-bold text-white">Black Friday</h1>
+        <a href = "#" class = "btn mt-3 text-uppercase">Compra aquí</a>
+      </div>
+    </div>
+    <button class = "carousel-control-prev" type = "button" data-bs-target="#header" data-bs-slide = "prev">
+        <span class = "carousel-control-prev-icon"></span>
+    </button>
+    <button class = "carousel-control-next" type = "button" data-bs-target="#header" data-bs-slide = "next">
+        <span class = "carousel-control-next-icon"></span>
+    </button>
+  </header>
+  <!-- end of header -->
+  <!-- Welcome Section -->
+  <section class="welcome text-center pb-5">
+    <div class="container py-5">
+      <div class="row py-5 text-white">
+        <div class="col-lg-6 m-auto">
+          <p class="wel-paragraph">Helados Artesanales</p>
+          <div class = "title pt-3 pb-5">
+            <h2 class = "position-relative d-inline-block ms-4">Bienvenido a IcyAsteroid</h2>
+          </div>
+           <p class="wel-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolor ex iusto aliquam ipsa ab distinctio facilis illo fuga? Maiores iure quae quo consequuntur tempora sit id suscipit quaerat placeat.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card py-3">
+            <div class="card-body">
+              <span><i class="bi bi-truck"></i></span>
+              <h3>Entrega Gratis</h3>
+              <p class="lead text-muted">Obtén envío gratis por cada pedido superior a S/40</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card py-3">
+            <div class="card-body">
+              <span><i class="bi bi-credit-card"></i></span>
+              <h3>Pago Seguro</h3>
+              <p class="lead text-muted">Pague con los métodos de pago más populares y seguros del mundo</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card py-3">
+            <div class="card-body">
+              <span><i class="bi bi-shield-check"></i></span>
+              <h3>Compra con Confianza</h3>
+              <p class="lead text-muted">Nuestra protección del comprador cubre su compra desde el clic hasta la entrega</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Welcome Section -->
+  <!-- Products -->
+  <section id = "Productos" class = "py-5">
+    <div class = "container">
+      <div class = "title text-center">
+        <h2 class = "position-relative d-inline-block">Productos</h2>
+      </div>
+      <div class = "row g-0">
+        <div class = "d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+          <button type = "button" class = "btn m-2 text-uppercase active-filter-btn" data-filter = "*">Todos</button>
+          <button type = "button" class = "btn m-2 text-uppercase">Exótico</button>
+          <button type = "button" class = "btn m-2 text-uppercase">Tradicional</button>
+          <button type = "button" class = "btn m-2 text-uppercase">Especial</button>
+        </div>
+        <div class = "collection-list mt-4 row gx-0 gy-3">
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC1.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+              <div class = "rating mt-3">
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+              </div>
+              <div class="info-shop text-center">
+                <p class = "text-capitalize  d-block">Menta Chips</p>
+                <span class = "fw-bold d-block">S/ 17.50</span>
+                <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+              </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC2.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Cookies</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC3.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Tutti frutti</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC4.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Stracciatella</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC5.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Passion fruit</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC6.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Fresa</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC7.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Green tea</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC8.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Chocolate</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC9.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+              <div class = "rating mt-3">
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+              </div>
+              <div class="info-shop text-center">
+                <p class = "text-capitalize d-block">Strawberry</p>
+                <span class = "fw-bold d-block">S/ 17.50</span>
+                <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+              </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC10.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Citrus</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC11.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Mango</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC12.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Bananas foster</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC13.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Chocolate - cono</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC14.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Vanilla - cono</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC15.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Amarena</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC16.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Chocolate Blanco</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC17.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+              <div class = "rating mt-3">
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+              </div>
+              <div class="info-shop text-center">
+                <p class = "text-capitalize d-block">Avellana Chips</p>
+                <span class = "fw-bold d-block">S/ 17.50</span>
+                <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+              </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC18.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Mani Chips</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC19.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Rocky road</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC20.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Limón - cono</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC21.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Strawberry</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC22.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Beer - Strawberry</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC23.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class="info-shop text-center">
+                  <p class = "text-capitalize d-block">Dulce de leche</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+            <div class = "collection-img d-flex flex-wrap justify-content-center">
+              <div class="product-container">
+                <img src = "img/iceC24.jpg" class = "picture-product">
+                <div class="promotion">sale</div>
+              </div>
+            </div>
+            <div class = "text-center">
+                <div class = "rating mt-3">
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                    <span class = "text-primary"><i class="bi bi-star-fill"></i></span>
+                </div>
+                <div class = "info-shop text-center">
+                  <p class = "text-capitalize d-block">Cookies - cream</p>
+                  <span class = "fw-bold d-block">S/ 17.50</span>
+                  <a href = "#" class = "btn btn-primary mt-3 d-block text-uppercase">Añadir al carrito</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Products -->
+  <!-- About us -->
+  <section id = "Acerca-de" class = "py-5">
+    <div class = "container">
+      <div class = "row gy-lg-5 align-items-center">
+        <div class = "col-lg-6 order-lg-1 text-center text-lg-start">
+          <div class = "title pt-3 pb-5">
+            <h2 class = "position-relative d-inline-block ms-4">Acerca de</h2>
+          </div>
+          <div>
+            <p class="gral-conf-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga blanditiis, modi exercitationem quae quam eveniet! Minus labore voluptatibus corporis recusandae accusantium velit, nemo, nobis, nulla ullam pariatur totam quos.</p>
+          </div>
+        </div>
+        <div class = "col-lg-6 order-lg-0">
+          <img src = "img/iceCxl.jpg" alt = "" class = "img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of about us -->
+  <!-- Subcription -->
+  <section id = "newsletter" class = "py-5">
+    <div class = "container">
+      <div class = "d-flex flex-column align-items-center justify-content-center">
+        <div class = "title text-center pt-3 pb-5">
+          <h2 class = "position-relative d-inline-block ms-4">¡Únete a nuestra comunidad!</h2>
+        </div>
+        <p class = "text-center gral-conf-p">Suscribete y obtén el 15% de descuento en tu primera compra</p>
+        <div class = "input-group mb-3 mt-3">
+          <input type = "email" class = "form-control" placeholder="Correo electrónico" id="sub-sec-email">
+          <button class = "btn-sub text-uppercase" type = "submit" id="sub-sec-Btn">Suscribirme</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end of Subcription -->
+  <!-- offers -->
+  <section id = "offers" class = "py-5">
+    <div class = "container">
+      <div class = "row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
+        <div class = "offers-content">
+          <span class = "text-white">Hasta 25% de descuento</span>
+          <h2 class = "text-uppercase py-2 fw-bold text-white">Disfruta el sabor de nuestros helados</h2>
+          <a href = "#" class = "btn text-uppercase">Compra aquí</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end of offers -->
+  <!-- Contactame -->
+  <section id="Contactenos" class="py-5">
+    <div class="contactContainer">
+      <div class="contactBox">
+        <form class="form" id="form">
+          <div class = "title pt-3 pb-5">
+            <h2 class = "position-relative d-inline-block ms-4">Contáctenos</h2>
+          </div>
+          <div class="formControl">
+            <input type="text" class="fieldBox" placeholder="Tu Nombre" id="nombre" name="nombre">
+            <i class="bi bi-check-circle-fill"></i><i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error Message</small>
+          </div>
+          <div class="formControl">
+            <input type="email" class="fieldBox" placeholder="Tu Email" id="email" name="email">
+            <i class="bi bi-check-circle-fill"></i><i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error Message</small>
+          </div>
+          <div class="formControl">
+            <input type="text" class="fieldBox" placeholder="Tu número de celular" id="celular" name="celular">
+            <i class="bi bi-check-circle-fill"></i><i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error Message</small>
+          </div>
+          <textarea placeholder="Mensaje" class="fieldBox"></textarea>
+          <button class="sendBtn text-uppercase" id="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- End of Contactame -->
+  <!-- footer -->
+  <footer class = "py-5">
+    <div class = "container">
+      <div class = "row text-white g-4">
+        <div class = "col-md-6 col-lg-3">
+          <a class = "navbar-brand" href = "index.html">
+            <p class="name-logo"><span class="first-name">Icy</span><span class="second-name-effect">Asteroid</span></p>
+          </a>
+        </div>
+        <div class = "list-politicas col-md-6 col-lg-3">
+          <h5 class = "fw-light">Atención al cliente</h5>
+          <ul class = "list-unstyled">
+            <li class = "my-3">
+              <a href = "#" class = "text-decoration-none"><i class="bi bi-chevron-right"></i>Políticas de Envio</a>
+            </li>
+            <li class = "my-3">
+              <a href = "#" class = "text-decoration-none"><i class="bi bi-chevron-right"></i>Políticas de Devoluciones</a>
+            </li>
+            <li class = "my-3">
+              <a href = "#" class = "text-decoration-none"><i class="bi bi-chevron-right"></i>Términos y Condiciones</a>
+            </li>
+            <li class = "my-3">
+              <a href = "#" class = "text-decoration-none"><i class="bi bi-chevron-right"></i> Libro de Reclamaciones</a>
+            </li>
+          </ul>
+        </div>
+        <div class = "col-md-6 col-lg-3">
+          <h5 class = "fw-light mb-3">Contáctanos</h5>
+          <div class = "d-flex justify-content-start align-items-start my-2 store-info">
+            <span class = "me-3"><i class="bi bi-geo-alt"></i></span>
+            <span class = "fw-light">C.C. La Rambla Brasil Tda. 135B, Breña</span>
+          </div>
+          <div class = "d-flex justify-content-start align-items-start my-2 store-info">
+            <span class = "me-3"><i class="bi bi-envelope"></i></span>
+            <span class = "fw-light">atencion@icyasteroid.com</span>
+          </div>
+          <div class = "d-flex justify-content-start align-items-start my-2 store-info">
+            <span class = "me-3"><i class="bi bi-telephone"></i></span>
+            <span class = "fw-light">+1 6776 2363</span>
+          </div>
+        </div>
+        <div class = "col-md-6 col-lg-3">
+          <h5 class = "fw-light mb-3">Síguenos</h5>
+          <div class="follow-box">
+            <ul class = "list-unstyled d-flex">
+              <li>
+                <a href = "#" class = "text-decoration-none fs-4 me-4"><i class="bi bi-facebook"></i></a>
+              </li>
+              <li>
+                <a href = "#" class = "text-decoration-none  fs-4 me-4"><i class="bi bi-twitter"></i></a>
+              </li>
+              <li>
+                <a href = "#" class = "text-decoration-none  fs-4 me-4"><i class="bi bi-instagram"></i></a>
+              </li>
+              <li>
+                <a href = "#" class = "text-decoration-none  fs-4 me-4"><i class="bi bi-tiktok"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="metodo-pago">
+            <h5 class = "fw-light mb-3">Metodos de Pago</h5>
+            <div>
+              <img src="img/paymet.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="co-right"> &#169; 2022 Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- end of footer -->
+  <!-- javaScript files javaScript files  javaScript files  javaScript files -->
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- JS code -->
+  <script src="jsCodes/navJsCode.js"></script>
+  <!-- JS code -->
+  <script src="jsCodes/codeJsForm.js"></script>
+  <!-- JS code -->
+  <script src="jsCodes/subCode.js"></script>
+  <!-- End javaScript files End javaScript files  End javaScript files -->
+</body>
+</html>

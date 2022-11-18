@@ -1,0 +1,35 @@
+footer{
+  background-color: var(--lightpurple);
+}
+footer a{
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+footer a:hover{
+  color: var(--yellow)!important;
+}
+footer h5{
+  font-size: 1.5rem;
+  color: var(--bluemoon);
+}
+.list-politicas a{
+  font-size: 1.35rem;
+  color: #666373;
+}
+.store-info span{
+  font-size: 1.35rem;
+  color: #666373;
+}
+.follow-box li a i{
+  font-size: 2rem;
+  color: #666373;
+}
+.follow-box li a i:hover{
+  color: var(--yellow);
+}
+.co-right{
+  text-align: center;
+  color: var(--bluemoon);
+  font-size: 1.5rem;
+}
